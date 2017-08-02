@@ -1,0 +1,22 @@
+.softkeyboard { font-family: "微软雅黑"; display: none; position: fixed; bottom: -201px; width:100%; background: #f6f6f6; border-top:1px solid #ccc;}
+.softkeyboard .item { font-size: 22px; color: #000; }
+.softkeyboard .item span.iconfont { font-size: 32px; }
+.softkeyboard .item,.softkeyboard .item .pecent3 ul,.softkeyboard .item .pecent1 { display:-webkit-box;display:-moz-box;display:-ms-box; -webkit-box-orient:horizontal;-moz-box-orient:horizontal;-ms-box-orient:horizontal;}
+.softkeyboard .item .pecent3 { -webkit-box-flex:3;-moz-box-flex:3;-ms-box-flex:3; width: 75%; }
+.softkeyboard .item .pecent1 { -webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1; width: 25%; }
+.softkeyboard .item .pecent3 ul { padding: 0; margin: 0; list-style: none;}
+.softkeyboard .item .pecent3 ul li { -webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1; text-align:center; height: 50px; line-height: 50px; width: 33%; }
+.softkeyboard .item .pecent3 ul li { border: 1px solid #ccc; border-left: none; border-top:none; }
+.softkeyboard .item .pecent3 ul li.no-border-right { border-right: none; }
+.softkeyboard .item .pecent3 ul li span { display: block; text-decoration: none; color: #000; }
+.softkeyboard .item .pecent3 ul li span:active { background: #ddd; }
+.softkeyboard .item .pecent1 div { -webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1; text-align:center; height: 100px; line-height: 100px; }
+.softkeyboard .item .pecent1 div { border-bottom: 1px solid #ccc;}
+.softkeyboard .item .pecent1 div.tap-delete span.delete { border-left: 1px solid #ccc;}
+.softkeyboard .item .pecent1 div span { display: block; text-decoration: none; color: #000; }
+.softkeyboard .item .pecent1 div span:active { background: #ddd; }
+.softkeyboard .item .pecent3 ul.lastItem li { border-bottom: none; }
+.softkeyboard .item .pecent1 div.lastItem { border-bottom: none; }
+.softkeyboard .item .pecent1 div.tap-ok span { background: #2b91e2; border-left: 1px solid #2b91e2; color: #fff;}
+.softkeyboard .item .pecent1 div.tap-ok span:active { border-left: 1px solid #3ca1e8; background: #3ca1e8; }
+.softkeyboard .item .pecent1 div.tap-ok.disabled span { background: #2b91e2; color:#95c8f1; }

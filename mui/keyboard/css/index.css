@@ -1,0 +1,15 @@
+.softkeyboard-area { width: 100%; height: 100%; position: absolute; top: 0; z-index: 1000; }
+.mui-gathering-content { background: #fff; }
+.mui-gathering-content .mui-content-padded{ padding: 1.5rem 0.75rem 0 0.75rem; }
+.mui-gathering-content .mui-content-padded h4 { font-size: 24px; font-weight: normal; margin-bottom: 0.3rem;}
+.mui-input-row .iconfont { font-size: 26px; font-weight: bold; display: inline-block; width: 30px; padding-left: 5px; float: left; height: 0.8rem; line-height: 0.8rem; z-index: 100; position: relative; }
+.mui-input-row input { padding: 0px; margin-bottom: 0; width: 100%; border: none; font-size: 26px; height: 100%; position: absolute; padding-left: 30px; left: 0px; z-index: 50; }
+.mui-input-row input.selected { border-radius: 5px; background: #f9f9f9; }
+.border-line { height: 1.4rem; border-top:1px solid #d8d8d8; margin-top: 0.3rem; }
+.mui-gathering-content .mui-content-padded button { background: #cf422b; color: #fff; border: 1px solid #cf422b; }
+.mui-gathering-content .mui-content-padded button:active { background: #ee583f; border: 1px solid #ee583f; color: #fff;}
+
+/*自定义键盘样式*/
+/*.softkeyboard .item .pecent1 div.tap-ok span { background: #cf422b; border-left: 1px solid #cf422b; color: #fff;}
+.softkeyboard .item .pecent1 div.tap-ok span:active { border-left: 1px solid #ee583f; background: #ee583f; }
+.softkeyboard .item .pecent1 div.tap-ok.disabled span { background: #cf422b; color:#fda597; }*/

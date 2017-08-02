@@ -1,0 +1,10 @@
+html { font-size: 50px; }
+body,html { height: 100%; font-family: "微软雅黑"; background: #fff; }
+.mui-bar-nav { box-shadow: none; }
+.mui-bar { background: #cf422b; }
+.mui-bar .mui-title { color: #fff; }
+.mui-bar-nav.mui-bar .mui-icon { color: #fff; }
+.mui-content>.mui-table-view:first-child { margin-top: 0.2rem; }
+.mui-btn-block { padding: 0.24rem 0.24rem; font-size: 18px; display: block; width: 100%; margin-bottom: 0.2rem; }
+.blank { height: 0.2rem; }
+.btn-fixed { position: fixed; width: 100%; bottom: 0.2rem; margin: 0; padding: 0 0.2rem; }
