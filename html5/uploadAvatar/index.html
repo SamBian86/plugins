@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>base64上传图片</title>
+    <style type="text/css">
+    	.uploadBox { width: 100%; }
+    	.uploadBox img { width: 100%; vertical-align:top;border:none; padding: 0; margin: 0; }
+    </style>
+<body>
+<div class="uploadBox">
+	<input type="file" id="upload" />
+	<img id="imgTag" />
+</div>
+
+<!-- 用于处理iphone图片旋转的插件 -->
+<script type="text/javascript" src="js/exif.js"></script>
+<script type="text/javascript">
+	var upload = document.getElementById('upload');
+	var imgTag = document.getElementById('imgTag');
+	upload.onchange = function(){
+		var file = this.files[0],
+		reader,
+		filter = /^image\/jpeg$/i;;
+		if(typeof FileReader === 'undefined'){
+			alert('您的浏览器不支持上传图片');
+		    return false;
+		}
+		if(!filter.test(file.type)){
+			alert('仅支持上传格式为jpg的图片');
+			return false;
+		}
+		reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function(event){
+            var img = new Image(),
+                width = 640,    //图片resize宽度
+                quality = 0.8,  //图像质量
+                canvas = document.createElement("canvas"),
+                drawer = canvas.getContext("2d");
+            	imgBase64Data = event.target.result;
+            
+            img.src = event.target.result;
+            img.onload = function(){
+            	var orientation = null,degree;
+            	EXIF.getData(this, function(){
+            		
+            		orientation = EXIF.getTag(this, 'Orientation');
+            		
+                	if(img.width > width){
+		                canvas.width = width;
+		                canvas.height = width * (img.height / img.width);
+                	}else{
+                		canvas.width = img.width;
+                		canvas.height = img.height;
+                	}
+                	
+                	//'旋转处理'
+            		console.log('orientation:' + orientation);
+		            //如果方向角不为1,都需要进行旋转,ios10.2版本取Orientation为undefined
+		            if(orientation === 6){  
+                    	canvas.width = img.height;
+                    	canvas.height = img.width;  
+                    	degree = 90 * Math.PI / 180;
+                    	drawer.rotate(degree);
+                        drawer.drawImage(img, 0, -img.height);        
+		            }else{
+		            	drawer.drawImage(img, 0, 0, canvas.width, canvas.height);
+		            }
+		            
+		            //获取Base64数据 替换掉'data:image/jpeg;base64,'就可以拿到base64的数据
+                	//imgBase64Data = canvas.toDataURL("image/jpeg", quality).replace("data:image/jpeg;base64,","");
+                	imgTag.src = canvas.toDataURL("image/jpeg", quality);
+                	
+					//下面可以编写异步处理的代码来提交Base64数据
+            		
+            	});
+            }
+
+		}
+	}
+	
+</script>
+</head>
+</body>
+</html>
