@@ -4,6 +4,11 @@
 工作中遇到个上传头像的需求,自己写了2个粗糙的组件(photo照片选择组件和cropper裁切组件)用于帮助实现该功能。
 photo(照片选择组件)插件简单封装了5+通过拍照或者选择照片的功能,并且封装了是否对选择的照片进行压缩的功能。
 
+![步骤一](https://github.com/AllanBian/plugins/blob/master/mui/uploadAvatar/images/1.jpg "步骤一")
+![步骤二](https://github.com/AllanBian/plugins/blob/master/mui/uploadAvatar/images/2.jpg "步骤二")
+![步骤三](https://github.com/AllanBian/plugins/blob/master/mui/uploadAvatar/images/3.jpg "步骤三")
+![步骤四](https://github.com/AllanBian/plugins/blob/master/mui/uploadAvatar/images/4.jpg "步骤四")
+
 ##照片选择组件的使用
 #### 在页面中引入照片选择组件
 
