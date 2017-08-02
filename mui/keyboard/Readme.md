@@ -5,6 +5,7 @@
 
 
 ##软键盘组件
+
 ![软键盘](https://github.com/AllanBian/plugins/blob/master/mui/keyboard/images/keyboard.png)	
 
 <font color="#ff0000">这个组件最关键的地方就是设置一个id为money的input框,一个class为softkeyboard-area的选择区域,这个选择区域必须挡在input框前面,有耐心的同学看看keyboard.js里面的代码就知道了</font>
