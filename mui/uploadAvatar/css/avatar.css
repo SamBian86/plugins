@@ -1,0 +1,7 @@
+.mui-content { padding-top: 44px; height: 100%; }
+.cropperBox { padding-bottom: 44px; height: 100%; }
+.cropperCon { overflow: hidden; position: relative; height: 100%; bottom: 44px; top:0px; background: #000; opacity: 0.8;}
+.cropperMask { width:100%; height: 100%; background: #000; position: absolute; z-index: 100;}
+.cropperImg { position: absolute; z-index: 50; /*top: 102px; height: 375px;*/ }
+.cropperArea { position: absolute; box-sizing: content-box; z-index: 100; top:0; /*width: 375px; height: 375px; border-top: 102px solid rgba(0, 0, 0, 0.8); border-bottom: 102px solid rgba(0, 0, 0, 0.8);*/}
+.cropperBottom { font-size: 0.3rem; position: fixed; height: 44px; line-height: 44px; bottom: 0px; width: 100%; text-align: center; background: #c9151e; color: #fff; }

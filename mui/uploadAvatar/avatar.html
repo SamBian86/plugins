@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/base.css" /> 
+	<link rel="stylesheet" type="text/css" href="css/avatar.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <span class="mui-icon mui-icon-arrowleft mui-action-back"></span>
+	    <h1 class="mui-title">设置头像</h1>
+	</header>
+	<div class="mui-content"> 
+		<div class="cropperBox" id="cropperBox">
+			<!--<div class="cropperCon">
+				<div id="cropperMask" class="cropperMask"></div>
+				<img id="cropperImg" class="cropperImg" src="../img/cbd.jpg" />
+				<div id="cropperArea" class="cropperArea"></div>
+			</div>
+			<div class="cropperBottom">保 存</div>-->
+		</div>
+	</div>
+<script type="text/javascript" src="js/mui.min.js" ></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cropper.js"></script>
+<script type="text/javascript">
+	var mainWV,currentWV,Cropper,imgFile,imgPath;
+	
+	mui.plusReady(function(){
+		mainWV = plus.webview.getLaunchWebview();
+		currentWV = plus.webview.currentWebview();
+		imgFile = currentWV.imgFile;
+		imgPath = currentWV.imgPath;
+		
+		Cropper = new Plugin.Cropper({ 
+			imgSrc : imgPath, 
+			saveCallBack : saveCallBack,
+			squareLen : 300
+		});
+		
+		//页面初始化方法
+		document.addEventListener('init',function(e){
+			
+		});
+		
+		mui.fire(currentWV,'init');
+	})
+	
+	//返回上一个页面并显示最新头像img标签
+	function saveCallBack(file,path){
+		mui.fire(mainWV,'updateImg',{ src : path + "?" + Math.random()});
+		mui.back();
+	}
+	
+	
+	//下面的方法可以结合uploader完成上传功能
+	/*
+	function saveCallBack(file,path){
+		var wt,task;
+		wt=plus.nativeUI.showWaiting();
+		task=plus.uploader.createUpload('http://xxxx.xxx',
+			{method:"POST"},
+			function(t,status){ //上传完成
+				var data,imgSrc;
+				if(status==200){
+					//获得数据
+					data = JSON.parse(t.responseText);
+					mui.toast('上传成功');
+					wt.close();
+				}else{
+					mui.toast('上传失败');
+					wt.close();
+				}
+			}
+		);
+		task.addFile(file,{key:'file'});
+		task.start();
+	}
+	*/
+	
+</script>
+</body>
+</html>

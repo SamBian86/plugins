@@ -1,0 +1,46 @@
+html{
+	/*font-size: calc(100vw/7.5);*/
+	font-size : 50px;
+	height: 100%;
+}
+@media screen and (max-width:320px){ /*320px的设备 */
+	html{
+		font-size: 42.6px;
+	}
+}
+body{
+	background: #f8f8f8;
+	font-family: "微软雅黑";
+	height: 100%;
+	margin: 0;
+}
+.marB2 { margin-bottom: 0.2rem; }
+.marB0 { margin-bottom: 0; }
+.mui-bar-nav{
+	background-color: #FFFFFF;
+	box-shadow: none;
+}
+.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left{
+	color: #C9151E;
+}
+ul,li,dl,dt,dd { list-style: none; }
+ul,li,dl,dt,dd,p { padding: 0; margin: 0;}
+.mui-content { background: none;}
+.mui-bar-nav { -webkit-box-shadow: 0 1px 1px #ccc; box-shadow: 0 1px 1px #ccc; }
+.mui-content>.mui-table-view:first-child { margin-top: 0.2rem; }
+.mui-table-view:before,.mui-table-view:after { height: 0;}
+.mui-bar { padding:0 15px; background: #fff; }
+.mui-table-view .mui-navigate-right:after { right: 0.3rem; }
+.mui-pull-caption{ color: #999999; font-size: 0.24rem; }
+.mui-bar-nav.mui-bar .mui-icon { font-size: 30px; color: #C9151E; height: 44px; line-height: 24px; }
+.mui-bar .mui-icon:active { opacity: 1; }
+.mui-pull-bottom-pocket, .mui-pull-top-pocket { background: #f8f8f8; }
+
+/*banner区域样式*/
+.mui-slider-indicator .mui-indicator { margin: 0px; border-radius: 0px; background: url('../img/newindex/banner_icon.png') no-repeat; width: 9px; height: 9px; box-shadow: none; }
+.mui-slider-indicator .mui-active.mui-indicator { background: url('../img/newindex/banner_icon_active.png') no-repeat; }
+
+/*通栏提交按钮*/
+.btnBox { padding: 0rem 0.3rem; margin-top: 0.6rem; overflow: hidden; }
+.btnBox input[type=button] { width: 100%; color: #fff; background: #C9151E; font-size: 0.36rem; }
+.btnBox input[type=button]:enabled:active { background: #C9151E; }
