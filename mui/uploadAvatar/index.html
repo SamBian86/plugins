@@ -10,57 +10,57 @@
     	.imgBox p img { width: 200px; height: 200px; }
     </style>
     <title>选择照片</title>
+</head>
 <body>
 	<div class="imgBox">
 		<button id="editAvatar">选择照片</button>
 		<p><img id="avatar" src="" /></p>
 	</div>
 
-<script type="text/javascript" src="js/mui.min.js" ></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/photo.js"></script>
-<script type="text/javascript">
-	mui.init();
-	var open = {
-		'avatar' : {//头像裁剪
-			'url' : 'avatar.html',
-			'type' : 'openWindow',
-			'data' : {}
-		}
-	};
-	mui.plusReady(function(){
-		//上传头像接口
-		mui('body').on('tap','#editAvatar', uploadAvatar);
-		
-		document.addEventListener('updateImg',function(e){
-			var src = e.detail.src;
-			var img = document.getElementById('avatar');
-			img.src = src;
-		})
-		
-	})
-   		
-	//上传头像
-	function uploadAvatar(){
-		Photo = new Plugin.Photo({
-			callback : openAvatarPape,
-			options : {},
-			title : "修改用户头像",
-			compress : true,
-			compressCfg : {
-				width : '100%'
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/photo.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		var open = {
+			'avatar' : {//头像裁剪
+				'url' : 'avatar.html',
+				'type' : 'openWindow',
+				'data' : {}
 			}
-		});
-		Photo.showSheet();
-	}
-	
-	//打开上传头像页面方法
-	function openAvatarPape(file,path,options){
-		open['avatar']['data']['imgFile'] = file;//dst
-		open['avatar']['data']['imgPath'] = path;
-		openView('avatar',open);
-	}
-</script>
-</head>
+		};
+		mui.plusReady(function(){
+			//上传头像接口
+			mui('body').on('tap','#editAvatar', uploadAvatar);
+			
+			document.addEventListener('updateImg',function(e){
+				var src = e.detail.src;
+				var img = document.getElementById('avatar');
+				img.src = src;
+			})
+			
+		})
+	   		
+		//上传头像
+		function uploadAvatar(){
+			Photo = new Plugin.Photo({
+				callback : openAvatarPape,
+				options : {},
+				title : "修改用户头像",
+				compress : true,
+				compressCfg : {
+					width : '100%'
+				}
+			});
+			Photo.showSheet();
+		}
+		
+		//打开上传头像页面方法
+		function openAvatarPape(file,path,options){
+			open['avatar']['data']['imgFile'] = file;//dst
+			open['avatar']['data']['imgPath'] = path;
+			openView('avatar',open);
+		}
+	</script>
 </body>
 </html>

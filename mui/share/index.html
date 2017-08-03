@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css">
+    <style type="text/css">
+    	.shareBox { width: 100%; text-align: center; }
+    	.shareBox button { margin: 0px 10px; }
+    </style>
+    <title>分享</title>
+<body>
+	<div class="shareBox" style="text-align: center;">
+		<p><button id="shareBtn">分享</button></p>
+		<p><button id="sharePYQ">分享朋友圈</button></p>
+		<p><button id="shareHY">分享给好友</button></p>
+		<p><button id="shareWeiBo">分享新浪微博</button></p>
+		<p><button id="shareQQ">分享QQ</button></p>
+	</div>
+
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script type="text/javascript" src="js/share.js"></script>
+	
+	<script type="text/javascript">
+		var Share;
+		var s_Url = 'https://github.com/AllanBian/plugins/tree/master/mui/share';
+		mui.init();
+		
+		
+		mui.plusReady(function(){
+			Share = new Plugin.Share({
+				'types':[{type:'weixin_pyq'},{type:'weixin_hy'},{type:'sinaweibo'},{type:'qq'}]
+			});
+			
+			//分享
+			mui('body').on('tap', '#shareBtn', function() {
+				Share.shareShow();
+			})
+			
+			//分享给微信好友
+			mui('body').on('tap', '#shareHY', function() {
+			    Share.shareShowByType('weixin_hy',{
+					type: 'link',
+					href: s_Url,
+					title: '分享功能!',
+					content: '分享给微信好友!',
+					pictures: ["_www/images/100.png"],
+					thumbs: ["_www/images/100.png"]
+				});
+			})
+			
+			
+			//分享朋友圈
+			mui('body').on('tap', '#sharePYQ', function() {
+			    Share.shareShowByType('weixin_pyq',{
+					type: 'link',
+					href: s_Url,
+					title: '分享功能!',
+					content: '分享到微信朋友圈!',
+					pictures: ["_www/images/100.png"],
+					thumbs: ["_www/images/100.png"]
+				});
+			})
+			
+			//分享新浪微博
+			mui('body').on('tap', '#shareWeiBo', function() {
+			    Share.shareShowByType('sinaweibo',{
+					type: 'link',
+					href: s_Url,
+					title: '分享功能!',
+					content: '分享到新浪微博!',
+					pictures: ["_www/images/100.png"],
+					thumbs: ["_www/images/100.png"]
+				});
+			})	
+			
+			//分享qq
+			mui('body').on('tap', '#shareQQ', function() {
+			    Share.shareShowByType('qq',{
+					type: 'link',
+					href: s_Url,
+					title: '分享功能!',
+					content: '分享到QQ!',
+					pictures: ["_www/images/100.png"],
+					thumbs: ["_www/images/100.png"]
+				});
+			})
+			
+		})
+	</script>
+</head>
+</body>
+</html>
