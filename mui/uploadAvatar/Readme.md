@@ -21,7 +21,7 @@ photo(照片选择组件)插件简单封装了5+通过拍照或者选择照片�
 注意buttons配置项，不推荐增加对象个数，文字描述可以修改，但是也不能完全改变其原来的含义，比如可以做如下修改 [{ title: "现在拍一张" }, { title: "从相册找一张图片" }]
 
 <pre><code>
-var Photo = new ASG.Photo({
+var Photo = new Plugin.Photo({
     title: "配置标题名称字样",
     cancel: "配置取消按钮字样",
     buttons : "配置actionSheet", //默认 [{ title: "拍照" }, { title: "从手机相册选择" }] 
@@ -29,7 +29,7 @@ var Photo = new ASG.Photo({
     callback : callback，    //回调函数返回3个参数，分别是文件，文件路径，传入的options
     //是否进行压缩,默认为false上传原图的大小
     compress : true,    
-    //压缩相关配置，只有在compress设置为true时才生效，具体使用方法参见http://www.html5plus.org/doc/zh_cn/zip.html#plus.zip.CompressImageOptions  注意:此对象src,dst,overwrite无法被修改，src自动获取,dst会存放在_doc/asg_doc/tempImage/临时目录中,overwrite为true,默认覆盖同名压缩文件
+    //压缩相关配置，只有在compress设置为true时才生效，具体使用方法参见http://www.html5plus.org/doc/zh_cn/zip.html#plus.zip.CompressImageOptions  注意:此对象src,dst,overwrite无法被修改，src自动获取,dst会存放在_doc/tempImage/临时目录中,overwrite为true,默认覆盖同名压缩文件
     compressCfg : {    
         width : 640
     }
@@ -53,7 +53,7 @@ mui.plusReady(function(){
 			text : "可以被回调函数调用哦"
 		};
 		//如何使用详见 photo.js代码中的说明
-		var Photo = new ASG.Photo({
+		var Photo = new Plugin.Photo({
 			title : "请选择",
 			cancel: "关闭",
 			callback : photoCallBack,
